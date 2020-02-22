@@ -1,0 +1,90 @@
+h1 {
+color: #4B0082;
+font-size: 60px;
+font-family: 'Raleway', sans-serif;
+text-align:left;
+margin-left:10px;
+margin-right:10px;
+padding-left:10px;
+padding-right:10px;
+width: 60%;
+}
+
+h2 {
+    color: #101010;
+    font-size: 40px;
+    font-family: 'Raleway', sans-serif;
+    text-align:left;
+    margin-left:10px;
+    margin-right:10px;
+    padding-left:10px;
+    padding-right:10px;
+    }
+
+h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size:20px;
+    color: #101010;
+    text-align:left;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.container {
+width: 100%;
+align-self:center;
+padding-left:12px;
+padding-right:12px;
+text-align:left;
+vertical-align: middle;
+}
+
+.footer {
+width: 80%;
+align-self: center;
+vertical-align: middle;
+background-color:#fcfdfc;
+padding-left:12px;
+padding-right:12px;
+text-align: center;
+}
+
+.row {
+border-bottom-width: 2px;
+border-bottom-style: solid;
+border-bottom-color: #B0B0B0;
+}
+
+.col-md-4 {
+padding-left:12px;
+padding-right:12px;
+text-align: center;
+vertical-align: middle;
+}
+
+.form-group {
+align-content: center;
+float: center;
+}
+
+.button {
+padding-left:12px;
+}
+
+p {
+    text-align: center;
+    font-family: 'Raleway';
+    }
+
+.jumbotron {
+    align-content: center;
+    width: 100%;
+    color: white;
+    min-height: 250px;
+    /* Background */
+    background-attachment: fixed;
+    background-image: url(global_hub_green.jpg);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position-x: center;
+}

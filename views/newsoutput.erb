@@ -18,23 +18,74 @@
     <!-- Your own CSS -->
     <link rel="stylesheet" href="/styles.css">
 
-    <title>News</title>
+    <title>Your News</title>
   </head>
   <body>
-
-    <div class="container mt-5">
-      <h1>Your News Station</h1>
+<br>
+<div class="container">
+<div class="row my-12">
+<div class="col-md-10">
+      <h1>The <%= @location %> Report</h1>
+</div>
+<div class="col-md-2">
+<form action="/">
+<button type="submit" class="btn btn-primary">Search Somewhere Else</button>
+</form>
+</div>
+</div>
+</div>
 <br>
 
-      <form>
-  <div class="col-sm-4">
-    <label for="location">Enter Your Location Here</label>
-    <input type="text" class="form-control" name="q" id="location" placeholder="Location">
-  </div>
-  <br><br>
-  <button type="submit" class="btn btn-primary">Ron Burgundy For Me!</button>
-</form>
-    </div>
+<!-- FORECAST: create loop to extract each day forecast and throw into a table -->
+<% current_temperature = @forecast["currently"]["temperature"] %>
+<% conditions = @forecast["currently"]["summary"] %>
+
+<h2><u>Your weather forecast:</u></h2><br>
+
+<div class="container">
+<div class="row my-3">
+<div class="col-md-8">
+<h3>It's currently <%= current_temperature.round() %> and <%= conditions %>.</h3>
+</div>
+</div>
+
+<% i = 1 %>
+<% for day in @forecast["daily"]["data"] %>
+<div class="row my-2">
+<div class="col-md-12">
+ <%   if i == 1 %>
+  <h3>Tomorrow, expect a high temperature of <%= day["temperatureHigh"].round() %> and <%= day["summary"] %></h3>
+   <% else %>
+    <h3>In <%= i %> days, expect a high temperature of <%= day["temperatureHigh"].round() %> and <%= day["summary"] %></h3>
+   <% end %>
+ <% i = i + 1 %>
+</div>
+</div>
+<% end %>
+</div>
+<br><br>
+ 
+<h2><u>Top news for today:</u></h2><br>
+
+<div class="container">
+<% for story in @articles %>
+<% headline = story["title"] %>
+<% link = story["url"] %>
+<div class="row my-3">
+<div class="col-md-8">
+<h3><%= headline %>
+</div>
+<div class="col-md-4">
+<a href="<%= link %>" target="_blank">Link</a>
+</h3>
+ </div>
+ </div>
+<% end %>
+</div>
+<br><br>
+
+<h5><center>Thank you for reading! Now go out and live...<center></h5>
+<br>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
